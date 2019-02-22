@@ -18,5 +18,8 @@
     "bots"
   ],
   "author": "ThatTonybo",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "phin": "^3.3.0"
+  }
 }

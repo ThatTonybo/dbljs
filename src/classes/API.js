@@ -6,5 +6,6 @@ module.exports = class API extends EventEmitter {
         super();
 
         this.Authorization = token;
+        this.baseURL = 'https://discordbots.org/api';
     }
 }
