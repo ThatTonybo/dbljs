@@ -5,7 +5,27 @@ module.exports = class API extends EventEmitter {
     constructor(token, options = {}) {
         super();
 
+        if (typeof (token) != 'string' || token == '') throw new Error('The supplied bot token must be a valid string');
+
         this.Authorization = token;
         this.baseURL = 'https://discordbots.org/api';
+    }
+
+    async _httpRequest(method, path) {
+        if (!['GET', 'POST'].includes(method.toUpperCase())) throw new Error('The supplied HTTP method must be either \'GET\' or \'POST\'');
+
+        try {
+            const res = await r({
+                url: `${this.baseURL}/${path}`,
+                method: method.toUpperCase()
+            });
+
+            if (res.statusCode == 404) return { status: 404 };
+            if (res.statusCode == 500) return { status: 500 };
+
+            return { status: res.statusCode, body: res.body };
+        } catch(err) {
+            return { status: 999, error: err };
+        }
     }
 }
