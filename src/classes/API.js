@@ -38,4 +38,9 @@ module.exports = class API extends EventEmitter {
         const getUser = require('../methods/User/getUser');
         return await getUser(this, _id);
     }
+
+    async widget(_id, _options) {
+        const getWidget = require('../methods/Widget/getWidget');
+        return await getWidget(this, _id, _options || {});
+    }
 }
