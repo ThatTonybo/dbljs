@@ -1,7 +1,7 @@
 module.exports = async (API, id, options) => {
     return new Promise(async (resolve, reject) => {
         if (typeof (id) != 'string' || id == '') return reject(`The supplied bot ID must be a valid string`);
-        if (options != null && typeof (options) != 'object') return reject(`The supplied options must be a valid object`);
+        if (options != null && typeof (options) != 'object') return reject(`The supplied options object must be a valid object`);
 
         let Options = [];
 
