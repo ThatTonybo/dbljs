@@ -39,8 +39,8 @@ module.exports = class API extends EventEmitter {
         => Promise {Bot}
     */
     async bot(_id) {
-        const getSpecificBot = require('../methods/Bot/getSpecificBot');
-        return await getSpecificBot(this, _id);
+        const getBot = require('../methods/Bot/getBot');
+        return await getBot(this, _id);
     }
 
     /*
