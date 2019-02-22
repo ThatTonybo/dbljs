@@ -1,0 +1,22 @@
+{
+  "name": "dbljs",
+  "version": "1.0.0",
+  "description": "A wrapper for the discordbots.org API and webhooks.",
+  "main": "src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discordbots.org",
+    "api",
+    "wrapper",
+    "webhooks",
+    "discord",
+    "bots"
+  ],
+  "author": "ThatTonybo",
+  "license": "MIT"
+}
