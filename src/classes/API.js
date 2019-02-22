@@ -7,17 +7,22 @@ module.exports = class API extends EventEmitter {
 
         if (typeof (token) != 'string' || token == '') throw new Error('The supplied bot token must be a valid string');
 
-        this.Authorization = token;
+        this._Authorization = token;
         this.baseURL = 'https://discordbots.org/api';
     }
 
-    async _httpRequest(method, path) {
+    async _httpRequest(method, path, authRequired) {
         if (!['GET', 'POST'].includes(method.toUpperCase())) throw new Error('The supplied HTTP method must be either \'GET\' or \'POST\'');
+
+        let headers = {};
+
+        if (authRequired) headers['Authorization'] = this._Authorization;
 
         try {
             const res = await r({
                 url: `${this.baseURL}/${path}`,
-                method: method.toUpperCase()
+                method: method.toUpperCase(),
+                headers
             });
 
             if (res.statusCode == 404) return { status: 404 };
@@ -27,5 +32,10 @@ module.exports = class API extends EventEmitter {
         } catch(err) {
             return { status: 999, error: err };
         }
+    }
+
+    async user(_id) {
+        const getUser = require('../methods/User/getUser');
+        return await getUser(this, _id);
     }
 }
