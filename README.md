@@ -20,4 +20,4 @@ You can now start using the API wrapper. For more information, check out the doc
 ## Contributing
 ~~to be completed~~
 
-(c) 2019 ThatTonybo. This project is licenced under the MIT Licence, please see [LICENCE.md](https://github.com/ThatTonybo/dbljs/blob/master/LICENSE) for information.
+(c) 2019 ThatTonybo. This project is licenced under the MIT Licence, please see [LICENCE](https://github.com/ThatTonybo/dbljs/blob/master/LICENSE) for information.
