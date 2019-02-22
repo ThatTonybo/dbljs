@@ -34,11 +34,37 @@ module.exports = class API extends EventEmitter {
         }
     }
 
+    /*
+        bot(<id>)
+        => Promise {Bot}
+    */
+    async bot(_id) {
+        const getSpecificBot = require('../methods/Bot/getSpecificBot');
+        return await getSpecificBot(this, _id);
+    }
+
+    /*
+        bots([options = {}])
+        => Promise {Array:Bot}
+    */
+    async bots(_options) {
+        const getAllBots = require('../methods/Bot/getAllBots');
+        return await getAllBots(this, _options || {});
+    }
+
+    /*
+        user(<id>)
+        => Promise {User}
+    */
     async user(_id) {
         const getUser = require('../methods/User/getUser');
         return await getUser(this, _id);
     }
 
+    /*
+        widget(<id>, [options = {}])
+        => Promise {WidgetURL}
+    */
     async widget(_id, _options) {
         const getWidget = require('../methods/Widget/getWidget');
         return await getWidget(this, _id, _options || {});
