@@ -1,6 +1,6 @@
 module.exports = async (API, id) => {
     return new Promise(async (resolve, reject) => {
-        if (typeof (id) != 'string' || id == '') reject(`The supplied user ID must be a valid string`);
+        if (typeof (id) != 'string' || id == '') return reject(`The supplied user ID must be a valid string`);
 
         const res = await API._httpRequest('GET', `users/${id}`, true);
         
