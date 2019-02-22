@@ -53,6 +53,15 @@ module.exports = class API extends EventEmitter {
     }
 
     /*
+        votes(<id>)
+        => Promise {Array:Vote}
+    */
+    async votes(_id) {
+        const getBotVotes = require('../methods/Bot/getBotVotes');
+        return await getBotVotes(this, _id);
+    }
+
+    /*
         user(<id>)
         => Promise {User}
     */
