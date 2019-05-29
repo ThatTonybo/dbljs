@@ -30,7 +30,7 @@ module.exports = class API extends EventEmitter {
 
             return { status: res.statusCode, body: res.body };
         } catch(err) {
-            return { status: 999, error: err };
+            return { status: null, error: err };
         }
     }
 
