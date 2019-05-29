@@ -47,9 +47,9 @@ module.exports = class API extends EventEmitter {
         bots([options = {}])
         => Promise {Array:Bot}
     */
-    async bots(_options) {
+    async bots(_options = {}) {
         const getAllBots = require('../methods/Bot/getAllBots');
-        return await getAllBots(this, _options || {});
+        return await getAllBots(this, _options);
     }
 
     /*
@@ -83,8 +83,8 @@ module.exports = class API extends EventEmitter {
         widget(<id>, [options = {}])
         => Promise {WidgetURL}
     */
-    async widget(_id, _options) {
+    async widget(_id, _options = {}) {
         const getWidget = require('../methods/Widget/getWidget');
-        return await getWidget(this, _id, _options || {});
+        return await getWidget(this, _id, _options);
     }
 }
