@@ -11,26 +11,36 @@ module.exports = class API extends EventEmitter {
         this.baseURL = 'https://discordbots.org/api';
     }
 
-    async _httpRequest(method, path, authRequired) {
+    async _httpRequest(method, path, authRequired, body = null) {
         if (!['GET', 'POST'].includes(method.toUpperCase())) throw new Error('The supplied HTTP method must be either \'GET\' or \'POST\'');
 
         let headers = {};
 
         if (authRequired) headers['Authorization'] = this._Authorization;
 
-        try {
-            const res = await r({
-                url: `${this.baseURL}/${path}`,
-                method: method.toUpperCase(),
-                headers
-            });
+        switch(method.toUpperCase()) {
+            case 'GET':
+                try {
+                    const res = await r({
+                        url: `${this.baseURL}/${path}`,
+                        method: method.toUpperCase(),
+                        headers
+                    });
+            
+                    if (res.statusCode == 404) return { status: 404 };
+                    if (res.statusCode == 500) return { status: 500 };
+            
+                    return { status: res.statusCode, body: res.body };
+                } catch(err) {
+                    return { status: null, error: err };
+                }
 
-            if (res.statusCode == 404) return { status: 404 };
-            if (res.statusCode == 500) return { status: 500 };
-
-            return { status: res.statusCode, body: res.body };
-        } catch(err) {
-            return { status: null, error: err };
+            case 'POST':
+                try {
+                    
+                } catch(err) {
+                    
+                }
         }
     }
 
