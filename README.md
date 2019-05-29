@@ -1,5 +1,7 @@
 # dbljs
-An incredibly simple to use wrapper for discordbots.org, supporting the API and webhooks. Guaranteed to be kept up to date when the API changes.
+An incredibly simple to use wrapper for discordbots.org, supporting the API and webhooks. Guaranteed to be kept up to date when the API changes.  
+
+[![Discord](https://discordapp.com/api/guilds/454409434676854786/embed.png?style=shield)](https://discord.gg/nnpPGRy)  
 
 ## Install
 dbljs can be installed using npm
@@ -28,6 +30,8 @@ You can now start using the API wrapper. For more information, check out the doc
     - [ ] User
 
 ## Contributing
-If you'd like to contribute, let me know by sending a message to me at `ThatTonybo#0001`. If you find any bugs or issues, [please report them](https://github.com/ThatTonybo/dbljs/issues).
+Contributions are welcome to any aspects of this project's source code, including improvements, changes or entirely new features. Fork the repository, make your changes, and create a pull request when you're ready to contribute.  
+If you find any issues, [please report them here](https://github.com/ThatTonybo/dbljs/issues).
 
-(c) 2019 ThatTonybo. This project is licenced under the MIT Licence, please see [LICENCE](https://github.com/ThatTonybo/dbljs/blob/master/LICENSE) for information.
+## Licence
+(c) 2019 ThatTonybo. Licenced under the MIT Licence, see the LICENCE file for more information.
