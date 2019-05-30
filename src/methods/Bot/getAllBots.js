@@ -14,7 +14,7 @@ module.exports = async (API, options) => {
         const res = await API._httpRequest('GET', URL, true);
 
         if ([404, 500].includes(res.status)) return reject(`API returned an error code '${res.status}'`);
-        if (res.status == 999) return reject(res.error);
+        if (res.status == null) return reject(res.error);
 
         return resolve({
             matching: res.body.total,
