@@ -1,6 +1,6 @@
 {
   "name": "dbljs",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "A wrapper for the discordbots.org API and webhooks.",
   "main": "src/index.js",
   "directories": {
@@ -19,6 +19,10 @@
   ],
   "author": "ThatTonybo",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThatTonybo/dbljs"
+  },
   "dependencies": {
     "phin": "^3.3.0"
   }

@@ -1,6 +1,8 @@
 # dbljs
 An incredibly simple to use wrapper for discordbots.org, supporting the API and webhooks. Guaranteed to be kept up to date when the API changes.  
 
+[![npm](https://img.shields.io/npm/v/dbljs.svg?color=%23D94444)](https://npmjs.com/package/dbljs)
+[![GitHub issues](https://img.shields.io/github/issues/ThatTonybo/dbljs.svg)](https://github.com/ThatTonybo/dbljs/issues)
 [![Discord](https://discordapp.com/api/guilds/454409434676854786/embed.png?style=shield)](https://discord.gg/nnpPGRy)  
 
 ## Install
