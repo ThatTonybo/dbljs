@@ -11,6 +11,15 @@ module.exports = class API extends EventEmitter {
         this.baseURL = 'https://discordbots.org/api';
     }
 
+    async get version() {
+        try {
+            const { version } = require('../../package.json');
+            return version;
+        } catch(err) {
+            return null;
+        }
+    }
+
     async _httpRequest(method, path, authRequired, body = null) {
         if (!['GET', 'POST'].includes(method.toUpperCase())) throw new Error('The supplied HTTP method must be either \'GET\' or \'POST\'');
 
