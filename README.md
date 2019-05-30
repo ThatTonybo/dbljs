@@ -26,7 +26,7 @@ You can now start using the API wrapper. For more information, check out the doc
     - [ ] Automatically, manual details
     - [ ] Automatically, client-based
 - [ ] Structures
-    - [ ] Bot
+    - [x] Bot
     - [ ] User
 
 ## Contributing
